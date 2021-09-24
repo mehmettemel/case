@@ -28,9 +28,16 @@ const CategoriesForm = ({ setShowModal, showModal }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    setCategories([newCategory, ...categories]);
-    setShowModal(false);
+    if (
+      !newCategory.categoryName ||
+      !newCategory.categoryDesc ||
+      !newCategory.categoryPhoto
+    ) {
+      alert("You need to fill all blank fields");
+    } else {
+      setCategories([newCategory, ...categories]);
+      setShowModal(false);
+    }
   };
   return (
     <>

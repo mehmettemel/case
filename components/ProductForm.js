@@ -48,8 +48,17 @@ const ProductForm = ({ setShowModal, showModal }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setProducts([newProduct, ...products]);
-    setShowModal(false);
+    if (
+      !newProduct.productName ||
+      !newProduct.productDesc ||
+      !newProduct.productPrice ||
+      newProduct.relatedCategories.length === 0
+    ) {
+      alert("You need to fill all blank fields");
+    } else {
+      setProducts([newProduct, ...products]);
+      setShowModal(false);
+    }
   };
   return (
     <>
