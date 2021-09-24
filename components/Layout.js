@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="grid grid-cols-5 p-5 min-h-screen">
+      <div className="grid grid-cols-5 p-5 min-h-screen overflow-x-hidden">
         <div className=" col-span-1">
           <Sidebar />
         </div>
